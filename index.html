@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel's Writings</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; text-align: center; }
+        nav { background: #333; padding: 15px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 18px; }
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .tab { display: none; }
+        .tab.active { display: block; }
+        .progress-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 50px; margin-top: 20px; }
+        .progress-item { display: flex; flex-direction: column; align-items: center; width: 150px; }
+        .progress-circle { position: relative; width: 120px; height: 120px; }
+        .progress-circle svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+        .progress-circle circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+        .progress-circle .bg { stroke: #ddd; }
+        .progress-circle .progress { stroke: #4caf50; stroke-dasharray: 314; stroke-dashoffset: 314; transition: stroke-dashoffset 1s ease-in-out; }
+        .progress-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; font-weight: bold; }
+        .progress-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+        ul { list-style-type: disc; list-style-position: inside;}
+        ul ul {list-style-type: none;}
+        .ltext {text-align: left;}
+        .novel-ul {text-align: left; font-size: medium; font-weight: bold;}
+        .novel-ulul {font-weight: 500;}
+    </style>
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+        function setProgress(circleId, percentage) {
+            const circle = document.querySelector(`#${circleId} .progress`);
+            const offset = 314 - (314 * percentage / 100);
+            circle.style.strokeDashoffset = offset;
+        }
+        window.onload = function() {
+            setProgress('progress1', 8);
+            setProgress('progress2', 85);
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showTab('progress')">Home</a>
+        <a href="#" onclick="showTab('lore')">Dravonarh</a>
+    </nav>
+    
+    <div class="container">
+        <div id="progress" class="tab active">
+            <div id="about">
+                <h1>About Me</h1>
+                <p>Hello there! My name is Joel, and I am an aspiring indie author! Most of my stories are set in one world, and they link together sometimes. I like coffee, writing fantasy stories, and programming! (I made this website myself.) Nothing finished yet, though I hope to change that soon.</p>
+            </div>
+            <h1>Novel Progress</h1>
+            <div class="progress-container">
+                <div class="progress-item">
+                    <div class="progress-title">The Assassin's First Contract - Draft One</div>
+                    <div class="progress-circle" id="progress1">
+                        <svg>
+                            <circle class="bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="progress" cx="60" cy="60" r="50"></circle>
+                        </svg>
+                        <div class="progress-text">8%</div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-title">The Assassin's Honor - Prewriting</div>
+                    <div class="progress-circle" id="progress2">
+                        <svg>
+                            <circle class="bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="progress" cx="60" cy="60" r="50"></circle>
+                        </svg>
+                        <div class="progress-text">85%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="lore" class="tab">
+            <h1>Dravonarh</h1>
+            <p class="ltext">Dravonarh is the planet where multiple stories and series take place. The planet is earth-like, and their technology can be compared to medieval England, though in the future they will encounter rapid technological growth (planned for a future Space Opera).</p>
+            <p class="ltext">There are two main continents on the planet, with various islands scattered about. The Assassin Series takes place on the Northern Hemisphere, on the continent of <b>Arthandla.</b> On Arthandla there are a few kingdoms, the largest of which is Deadburn. There is no magics there, except for a brief presence of Veilbinding.</p>
+            <p class="ltext">The continent on the Southern Hemisphere of Dravonarh is not named yet, but The Silver King takes place here. Here, Pirates are common, and it is comparable to Vikings. There is a strong, but mostly unknown magic force on the continent, called Adons, and the only (known) entrance to The Magical Realm: The Nexus Point.</p>
+
+            <h1>Planned Novels Taking Place on Dravonarh</h1>
+            <p class="ltext">Stories within Dravonarh</p>
+            <ul>
+                <li class="novel-ul">The Assassin Trilogy (Medieval Mid-Grade Fantasy)
+                    <ul>
+                        <li class="novel-ulul">The Assassin's First Contract - Book 0 (Novella)</li>
+                        <li class="novel-ulul">The Assassin's Honor - Book 1</li>
+                        <li class="novel-ulul">Unnamed - Book 2</li>
+                        <li class="novel-ulul">Unnamed - Book 3</li>
+                    </ul>
+                <li class="novel-ul">The Silver King (Mid-Grade Fantasy)</li>
+                <li class="novel-ul">The King's Court (Sci-Fi / Space Opera)</li>
+                <li class="novel-ul">The Door Through Magic Saga (High Fantasy)
+                    <ul>
+                        <li class="novel-ulul">The Door Through Magic - Book One</li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </div>        
+    </div>
+</body>
+</html>
