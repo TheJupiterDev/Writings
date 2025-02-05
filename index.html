@@ -39,7 +39,6 @@
         window.onload = function() {
             setProgress('progress1', 8);
             setProgress('progress2', 85);
-            setProgress('progress3', 80);
         }
     </script>
 </head>
@@ -55,12 +54,12 @@
             <div id="about">
                 <h1>About Me</h1>
                 <p>Hello there! My name is Joel, and I am an aspiring indie author! Most of my stories are set in one world, and they link together sometimes. I like coffee, writing fantasy stories, and programming! (I made this website myself.) Nothing finished yet, though I hope to change that soon.</p>
-                <p>I try to put short stories of flash fiction up every week, so look at those if you are interested!</p>
+                <p>I try to put short stories or flash fiction up every month (at least), so look at those if you are interested!</p>
             </div>
             <h1>Novel Progress</h1>
             <div class="progress-container">
                 <div class="progress-item">
-                    <div class="progress-title">The Assassin's First Contract - Draft One</div>
+                    <div class="progress-title">The Assassin's First Contract - First Draft</div>
                     <div class="progress-circle" id="progress1">
                         <svg>
                             <circle class="bg" cx="60" cy="60" r="50"></circle>
@@ -79,23 +78,14 @@
                         <div class="progress-text">85%</div>
                     </div>
                 </div>
-                <div class="progress-item">
-                    <div class="progress-title">The Corridor - A Short Story</div><br>
-                    <div class="progress-circle" id="progress3">
-                        <svg>
-                            <circle class="bg" cx="60" cy="60" r="50"></circle>
-                            <circle class="progress" cx="60" cy="60" r="50"></circle>
-                        </svg>
-                        <div class="progress-text">80%</div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
         <div id="stories" class="tab">
             <h1>The Corridor</h1>
             <h4>What is real? I couldn't remember.</h4>
-            <h5>Coming Soon</h5>
+            <button type="submit" onclick="window.open('stories/corridor.pdf')">Download "The Corridor" PDF</button>
             </div>
         
         <div id="lore" class="tab">
